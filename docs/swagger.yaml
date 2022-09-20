@@ -1,0 +1,1682 @@
+definitions:
+  config.AliyunOSS:
+    properties:
+      accessKeyId:
+        type: string
+      accessKeySecret:
+        type: string
+      basePath:
+        type: string
+      bucketName:
+        type: string
+      bucketUrl:
+        type: string
+      endpoint:
+        type: string
+    type: object
+  config.Captcha:
+    properties:
+      imgHeight:
+        description: 验证码高度
+        type: integer
+      imgWidth:
+        description: 验证码宽度
+        type: integer
+      keyLong:
+        description: 验证码长度
+        type: integer
+    type: object
+  config.Casbin:
+    properties:
+      apiLevel:
+        description: api粒度的鉴权
+        type: boolean
+      modelPath:
+        description: 存放casbin模型的相对路径
+        type: string
+    type: object
+  config.Detail:
+    properties:
+      compareField:
+        description: 需要比较时间的字段
+        type: string
+      interval:
+        description: 时间间隔
+        type: string
+      tableName:
+        description: 需要清理的表名
+        type: string
+    type: object
+  config.Email:
+    properties:
+      from:
+        description: 收件人
+        type: string
+      host:
+        description: 服务器地址
+        type: string
+      isSSL:
+        description: 是否SSL
+        type: boolean
+      nickname:
+        description: 昵称
+        type: string
+      port:
+        description: 端口
+        type: integer
+      secret:
+        description: 密钥
+        type: string
+      to:
+        description: 收件人:多个以英文逗号分隔
+        type: string
+    type: object
+  config.Excel:
+    properties:
+      dir:
+        type: string
+    type: object
+  config.JWT:
+    properties:
+      bufferTime:
+        description: 缓冲时间
+        type: integer
+      expiresTime:
+        description: 过期时间
+        type: integer
+      signingKey:
+        description: jwt签名
+        type: string
+    type: object
+  config.Local:
+    properties:
+      path:
+        description: 本地文件路径
+        type: string
+    type: object
+  config.Mysql:
+    properties:
+      config:
+        description: 高级配置
+        type: string
+      dbname:
+        description: 数据库名
+        type: string
+      logMode:
+        description: 是否开启Gorm全局日志
+        type: string
+      logZap:
+        description: 是否通过zap写入日志文件
+        type: boolean
+      maxIdleConns:
+        description: 空闲中的最大连接数
+        type: integer
+      maxOpenConns:
+        description: 打开到数据库的最大连接数
+        type: integer
+      password:
+        description: 数据库密码
+        type: string
+      path:
+        description: 服务器地址:端口
+        type: string
+      username:
+        description: 数据库用户名
+        type: string
+    type: object
+  config.Qiniu:
+    properties:
+      accessKey:
+        description: 秘钥AK
+        type: string
+      bucket:
+        description: 空间名称
+        type: string
+      imgPath:
+        description: CDN加速域名
+        type: string
+      secretKey:
+        description: 秘钥SK
+        type: string
+      useCdnDomains:
+        description: 上传是否使用CDN上传加速
+        type: boolean
+      useHttps:
+        description: 是否使用https
+        type: boolean
+      zone:
+        description: 存储区域
+        type: string
+    type: object
+  config.Redis:
+    properties:
+      addr:
+        description: 服务器地址:端口
+        type: string
+      db:
+        description: redis的哪个数据库
+        type: integer
+      password:
+        description: 密码
+        type: string
+    type: object
+  config.Server:
+    properties:
+      aliyunOSS:
+        $ref: '#/definitions/config.AliyunOSS'
+      captcha:
+        $ref: '#/definitions/config.Captcha'
+      casbin:
+        $ref: '#/definitions/config.Casbin'
+      email:
+        $ref: '#/definitions/config.Email'
+      excel:
+        $ref: '#/definitions/config.Excel'
+      jwt:
+        $ref: '#/definitions/config.JWT'
+      local:
+        $ref: '#/definitions/config.Local'
+        description: oss
+      mysql:
+        $ref: '#/definitions/config.Mysql'
+        description: gorm
+      qiniu:
+        $ref: '#/definitions/config.Qiniu'
+      redis:
+        $ref: '#/definitions/config.Redis'
+      system:
+        $ref: '#/definitions/config.System'
+      tencentCOS:
+        $ref: '#/definitions/config.TencentCOS'
+      timer:
+        $ref: '#/definitions/config.Timer'
+      zap:
+        $ref: '#/definitions/config.Zap'
+    type: object
+  config.System:
+    properties:
+      addr:
+        description: 端口值
+        type: integer
+      dbType:
+        description: 数据库类型:mysql(默认)|sqlite|sqlserver|postgresql
+        type: string
+      env:
+        description: 环境值
+        type: string
+      ossType:
+        description: Oss类型
+        type: string
+      useMultipoint:
+        description: 多点登录拦截
+        type: boolean
+    type: object
+  config.TencentCOS:
+    properties:
+      baseURL:
+        type: string
+      bucket:
+        type: string
+      pathPrefix:
+        type: string
+      region:
+        type: string
+      secretID:
+        type: string
+      secretKey:
+        type: string
+    type: object
+  config.Timer:
+    properties:
+      detail:
+        items:
+          $ref: '#/definitions/config.Detail'
+        type: array
+      spec:
+        description: CRON表达式
+        type: string
+      start:
+        description: 是否启用
+        type: boolean
+    type: object
+  config.Zap:
+    properties:
+      director:
+        description: 日志文件夹
+        type: string
+      encodeLevel:
+        description: 编码级
+        type: string
+      format:
+        description: 输出
+        type: string
+      level:
+        description: 级别
+        type: string
+      linkName:
+        description: 软链接名称
+        type: string
+      logInConsole:
+        description: 输出控制台
+        type: boolean
+      prefix:
+        description: 日志前缀
+        type: string
+      showLine:
+        description: 显示行
+        type: boolean
+      stacktraceKey:
+        description: 栈名
+        type: string
+    type: object
+  entities.Admin:
+    properties:
+      activeColor:
+        description: 活跃颜色
+        type: string
+      authorities:
+        items:
+          $ref: '#/definitions/entities.Authority'
+        type: array
+      authority:
+        $ref: '#/definitions/entities.Authority'
+      authorityId:
+        description: 用户角色ID
+        type: string
+      avatar:
+        description: 用户头像
+        type: string
+      baseColor:
+        description: 基础颜色
+        type: string
+      createdAt:
+        description: 创建时间
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      nickName:
+        description: 用户昵称
+        type: string
+      sideMode:
+        description: 用户侧边主题
+        type: string
+      updatedAt:
+        description: 更新时间
+        type: string
+      userName:
+        description: 用户登录名
+        type: string
+      uuid:
+        description: 用户UUID
+        type: string
+    type: object
+  entities.Api:
+    properties:
+      apiGroup:
+        description: api组
+        type: string
+      createdAt:
+        description: 创建时间
+        type: string
+      description:
+        description: api中文描述
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      method:
+        description: 方法:创建POST(默认)|查看GET|更新PUT|删除DELETE
+        type: string
+      path:
+        description: api路径
+        type: string
+      updatedAt:
+        description: 更新时间
+        type: string
+    type: object
+  entities.Authority:
+    properties:
+      authorityId:
+        description: 角色ID
+        type: string
+      authorityName:
+        description: 角色名
+        type: string
+      children:
+        items:
+          $ref: '#/definitions/entities.Authority'
+        type: array
+      createdAt:
+        description: 创建时间
+        type: string
+      dataAuthorityId:
+        items:
+          $ref: '#/definitions/entities.Authority'
+        type: array
+      defaultRouter:
+        description: 默认菜单(默认dashboard)
+        type: string
+      deletedAt:
+        type: string
+      menus:
+        items:
+          $ref: '#/definitions/entities.BaseMenu'
+        type: array
+      parentId:
+        description: 父角色ID
+        type: string
+      updatedAt:
+        description: 更新时间
+        type: string
+    type: object
+  entities.BaseMenu:
+    properties:
+      authorities:
+        items:
+          $ref: '#/definitions/entities.Authority'
+        type: array
+      children:
+        items:
+          $ref: '#/definitions/entities.BaseMenu'
+        type: array
+      closeTab:
+        description: 自动关闭tab
+        type: boolean
+      component:
+        description: 对应前端文件路径
+        type: string
+      createdAt:
+        description: 创建时间
+        type: string
+      defaultMenu:
+        description: 是否是基础路由（开发中）
+        type: boolean
+      hidden:
+        description: 是否在列表隐藏
+        type: boolean
+      icon:
+        description: 菜单图标
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      keepAlive:
+        description: 是否缓存
+        type: boolean
+      name:
+        description: 路由name
+        type: string
+      parameters:
+        items:
+          $ref: '#/definitions/entities.BaseMenuParameter'
+        type: array
+      parentId:
+        description: 父菜单ID
+        type: string
+      path:
+        description: 路由path
+        type: string
+      sort:
+        description: 排序标记
+        type: integer
+      title:
+        description: 菜单名
+        type: string
+      updatedAt:
+        description: 更新时间
+        type: string
+    type: object
+  entities.BaseMenuParameter:
+    properties:
+      baseMenuID:
+        type: integer
+      createdAt:
+        description: 创建时间
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      key:
+        description: 地址栏携带参数的key
+        type: string
+      type:
+        description: 地址栏携带参数为params还是query
+        type: string
+      updatedAt:
+        description: 更新时间
+        type: string
+      value:
+        description: 地址栏携带参数的值
+        type: string
+    type: object
+  entities.Operations:
+    properties:
+      admin:
+        $ref: '#/definitions/entities.Admin'
+      admin_id:
+        description: 用户id
+        type: integer
+      agent:
+        description: 代理
+        type: string
+      body:
+        description: 请求Body
+        type: string
+      createdAt:
+        description: 创建时间
+        type: string
+      error_message:
+        description: 错误信息
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      ip:
+        description: 请求ip
+        type: string
+      latency:
+        description: 延迟
+        type: string
+      method:
+        description: 请求方法
+        type: string
+      path:
+        description: 请求路径
+        type: string
+      resp:
+        description: 响应Body
+        type: string
+      status:
+        description: 请求状态
+        type: integer
+      updatedAt:
+        description: 更新时间
+        type: string
+    type: object
+  entities.System:
+    properties:
+      config:
+        $ref: '#/definitions/config.Server'
+    type: object
+  request.Empty:
+    type: object
+  request.GetAuthorityId:
+    properties:
+      authorityId:
+        description: 角色ID
+        type: string
+    type: object
+  request.GetById:
+    properties:
+      id:
+        description: 主键ID
+        type: number
+    type: object
+  request.IdsReq:
+    properties:
+      ids:
+        items:
+          type: integer
+        type: array
+    type: object
+  request.PageInfo:
+    properties:
+      page:
+        description: 页码
+        type: integer
+      pageSize:
+        description: 每页大小
+        type: integer
+    type: object
+  requests.AddMenuAuthorityInfo:
+    properties:
+      authorityId:
+        description: 角色ID
+        type: string
+      menus:
+        items:
+          $ref: '#/definitions/entities.BaseMenu'
+        type: array
+    type: object
+  requests.AdminLogin:
+    properties:
+      captcha:
+        description: 验证码
+        type: string
+      captchaId:
+        description: 验证码ID
+        type: string
+      password:
+        description: 密码
+        type: string
+      username:
+        description: 用户名
+        type: string
+    type: object
+  requests.CasbinInReceive:
+    properties:
+      authorityId:
+        description: 权限id
+        type: string
+      casbinInfos:
+        items:
+          $ref: '#/definitions/requests.CasbinInfo'
+        type: array
+    type: object
+  requests.CasbinInfo:
+    properties:
+      method:
+        description: 方法
+        type: string
+      path:
+        description: 路径
+        type: string
+    type: object
+  requests.ChangePasswordStruct:
+    properties:
+      newPassword:
+        description: 新密码
+        type: string
+      password:
+        description: 密码
+        type: string
+      username:
+        description: 用户名
+        type: string
+    type: object
+  requests.InitDB:
+    properties:
+      dbName:
+        description: 数据库名
+        type: string
+      host:
+        description: 服务器地址
+        type: string
+      password:
+        description: 数据库密码
+        type: string
+      port:
+        description: 数据库连接端口
+        type: string
+      userName:
+        description: 数据库用户名
+        type: string
+    required:
+    - dbName
+    - userName
+    type: object
+  requests.OperationsSearch:
+    properties:
+      admin:
+        $ref: '#/definitions/entities.Admin'
+      admin_id:
+        description: 用户id
+        type: integer
+      agent:
+        description: 代理
+        type: string
+      body:
+        description: 请求Body
+        type: string
+      createdAt:
+        description: 创建时间
+        type: string
+      error_message:
+        description: 错误信息
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      ip:
+        description: 请求ip
+        type: string
+      latency:
+        description: 延迟
+        type: string
+      method:
+        description: 请求方法
+        type: string
+      page:
+        description: 页码
+        type: integer
+      pageSize:
+        description: 每页大小
+        type: integer
+      path:
+        description: 请求路径
+        type: string
+      resp:
+        description: 响应Body
+        type: string
+      status:
+        description: 请求状态
+        type: integer
+      updatedAt:
+        description: 更新时间
+        type: string
+    type: object
+  requests.Register:
+    properties:
+      authorityId:
+        type: string
+      authorityIds:
+        items:
+          type: string
+        type: array
+      avatar:
+        type: string
+      nickName:
+        type: string
+      passWord:
+        type: string
+      userName:
+        type: string
+    type: object
+  requests.SearchApiParams:
+    properties:
+      apiGroup:
+        description: api组
+        type: string
+      createdAt:
+        description: 创建时间
+        type: string
+      desc:
+        description: 排序方式:升序false(默认)|降序true
+        type: boolean
+      description:
+        description: api中文描述
+        type: string
+      id:
+        description: 主键ID
+        type: integer
+      method:
+        description: 方法:创建POST(默认)|查看GET|更新PUT|删除DELETE
+        type: string
+      orderKey:
+        description: 排序
+        type: string
+      page:
+        description: 页码
+        type: integer
+      pageSize:
+        description: 每页大小
+        type: integer
+      path:
+        description: api路径
+        type: string
+      updatedAt:
+        description: 更新时间
+        type: string
+    type: object
+  requests.SetUserAuth:
+    properties:
+      authorityId:
+        description: 角色ID
+        type: string
+    type: object
+  requests.SetUserAuthorities:
+    properties:
+      authorityIds:
+        description: 角色ID
+        items:
+          type: string
+        type: array
+      id:
+        type: integer
+    type: object
+  responses.SysAuthorityCopyResponse:
+    properties:
+      authority:
+        $ref: '#/definitions/entities.Authority'
+      oldAuthorityId:
+        description: 旧角色ID
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is a sample Server pets
+  title: Hertz Swagger API
+  version: 0.0.1
+paths:
+  /admin-api/admin/changePassword:
+    put:
+      parameters:
+      - description: 用户名, 原密码, 新密码
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.ChangePasswordStruct'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"修改成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 用户修改密码
+      tags:
+      - Admin.Admin
+  /admin-api/admin/deleteUser:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: 用户ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.GetById'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除用户
+      tags:
+      - Admin.Admin
+  /admin-api/admin/getUserInfo:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取用户信息
+      tags:
+      - Admin.Admin
+  /admin-api/admin/getUserList:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 页码, 每页大小
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.PageInfo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 分页获取用户列表
+      tags:
+      - Admin.Admin
+  /admin-api/admin/register:
+    post:
+      parameters:
+      - description: 用户名, 昵称, 密码, 角色ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.Register'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"注册成功"}'
+          schema:
+            type: string
+      summary: 用户注册账号
+      tags:
+      - Admin.Admin
+  /admin-api/admin/setUserAuthorities:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 用户UUID, 角色ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.SetUserAuthorities'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"修改成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 设置用户权限
+      tags:
+      - Admin.Admin
+  /admin-api/admin/setUserAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 用户UUID, 角色ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.SetUserAuth'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"修改成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 更改用户权限
+      tags:
+      - Admin.Admin
+  /admin-api/admin/setUserInfo:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: ID, 用户名, 昵称, 头像链接
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Admin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"设置成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 设置用户信息
+      tags:
+      - Admin.Admin
+  /admin-api/api/createApi:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: api路径, api中文描述, api组, 方法
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Api'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"创建成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 创建基础api
+      tags:
+      - Admin.Api
+  /admin-api/api/deleteApi:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Api'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除api
+      tags:
+      - Admin.Api
+  /admin-api/api/deleteApisByIds:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.IdsReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除选中Api
+      tags:
+      - Admin.Api
+  /admin-api/api/getAllApis:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取所有的Api 不分页
+      tags:
+      - Admin.Api
+  /admin-api/api/getApiById:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 根据id获取api
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.GetById'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 根据id获取api
+      tags:
+      - Admin.Api
+  /admin-api/api/getApiList:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 分页获取API列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.SearchApiParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 分页获取API列表
+      tags:
+      - Admin.Api
+  /admin-api/api/updateApi:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: api路径, api中文描述, api组, 方法
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Api'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"修改成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 创建基础api
+      tags:
+      - Admin.Api
+  /admin-api/authority/copyAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 旧角色id, 新权限id, 新权限名, 新父角色id
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/responses.SysAuthorityCopyResponse'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"拷贝成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 拷贝角色
+      tags:
+      - Admin.Authority
+  /admin-api/authority/createAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 权限id, 权限名, 父角色id
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Authority'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"创建成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 创建角色
+      tags:
+      - Admin.Authority
+  /admin-api/authority/deleteAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 删除角色
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Authority'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除角色
+      tags:
+      - Admin.Authority
+  /admin-api/authority/getAuthorityList:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 页码, 每页大小
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.PageInfo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 分页获取角色列表
+      tags:
+      - Admin.Authority
+  /admin-api/authority/setDataAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 设置角色资源权限
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Authority'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"设置成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 设置角色资源权限
+      tags:
+      - Admin.Authority
+  /admin-api/authority/updateAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 权限id, 权限名, 父角色id
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Authority'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"更新成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 更新角色信息
+      tags:
+      - Admin.Authority
+  /admin-api/captcha:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"验证码获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 生成验证码
+      tags:
+      - Admin.Base
+  /admin-api/casbin/UpdateCasbin:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 权限id, 权限模型列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.CasbinInReceive'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"更新成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 更新角色api权限
+      tags:
+      - Admin.Casbin
+  /admin-api/casbin/getPolicyPathByAuthorityId:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 权限id, 权限模型列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.CasbinInReceive'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取权限列表
+      tags:
+      - Admin.Casbin
+  /admin-api/init/checkDB:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"data":{},"msg":"探测完成"}'
+          schema:
+            type: string
+      summary: 初始化用户数据库
+      tags:
+      - Admin.InitDB
+  /admin-api/init/initDB:
+    post:
+      parameters:
+      - description: 初始化数据库参数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.InitDB'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"data":{},"msg":"自动创建数据库成功"}'
+          schema:
+            type: string
+      summary: 初始化用户数据库
+      tags:
+      - Admin.InitDB
+  /admin-api/login:
+    post:
+      parameters:
+      - description: 用户名, 密码, 验证码
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.AdminLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"登陆成功"}'
+          schema:
+            type: string
+      summary: 后台用户登录
+      tags:
+      - Admin.Base
+  /admin-api/logout:
+    delete:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"拉黑成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 注销成功（jwt加入黑名单）
+      tags:
+      - Admin.Base
+  /admin-api/menu/addBaseMenu:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 路由path, 父菜单ID, 路由name, 对应前端文件路径, 排序标记
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.BaseMenu'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"添加成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 新增菜单
+      tags:
+      - Admin.Menu
+  /admin-api/menu/addMenuAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 角色ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.AddMenuAuthorityInfo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"添加成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 增加menu和角色关联关系
+      tags:
+      - Admin.AuthorityMenu
+  /admin-api/menu/deleteBaseMenu:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 菜单id
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.GetById'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除菜单
+      tags:
+      - Admin.Menu
+  /admin-api/menu/getBaseMenuById:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 菜单id
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.GetById'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 根据id获取菜单
+      tags:
+      - Admin.Menu
+  /admin-api/menu/getBaseMenuTree:
+    post:
+      parameters:
+      - description: 空
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.Empty'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取用户动态路由
+      tags:
+      - Admin.AuthorityMenu
+  /admin-api/menu/getMenu:
+    post:
+      parameters:
+      - description: 空
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.Empty'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取用户动态路由
+      tags:
+      - Admin.AuthorityMenu
+  /admin-api/menu/getMenuAuthority:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 角色ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.GetAuthorityId'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取指定角色menu
+      tags:
+      - Admin.AuthorityMenu
+  /admin-api/menu/getMenuList:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 页码, 每页大小
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.PageInfo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 分页获取基础menu列表
+      tags:
+      - Admin.Menu
+  /admin-api/menu/updateBaseMenu:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 路由path, 父菜单ID, 路由name, 对应前端文件路径, 排序标记
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.BaseMenu'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"更新成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 更新菜单
+      tags:
+      - Admin.Menu
+  /admin-api/operations/deleteOperations:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: Operations模型
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Operations'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 删除操作记录
+      tags:
+      - Admin.Operations
+  /admin-api/operations/deleteOperationsByIds:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: 批量删除Operations
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.IdsReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"批量删除成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 批量删除操作记录
+      tags:
+      - Admin.Operations
+  /admin-api/operations/findOperations:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: ID
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.Operations'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"查询成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 用id查询操作记录
+      tags:
+      - Admin.Operations
+  /admin-api/operations/getOperationsList:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 页码, 每页大小, 搜索条件
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/requests.OperationsSearch'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 分页获取操作记录列表
+      tags:
+      - Admin.Operations
+  /admin-api/system/getServerInfo:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取服务器信息
+      tags:
+      - Admin.System
+  /admin-api/system/getSystemConfig:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 获取配置文件内容
+      tags:
+      - Admin.System
+  /admin-api/system/setSystemConfig:
+    post:
+      parameters:
+      - description: 设置配置文件内容
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entities.System'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"设置成功"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 设置配置文件内容
+      tags:
+      - Admin.System
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

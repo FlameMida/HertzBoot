@@ -1,0 +1,110 @@
+# gin-starter Global Configuration
+
+# jwt configuration
+jwt:
+  signing-key: 'Keys'
+  expires-time: 604800
+  buffer-time: 86400
+
+# zap logger configuration
+zap:
+  level: 'info'
+  format: 'console'
+  prefix: '[GIN-STARTER]'
+  director: 'log'
+  link-name: 'latest_log'
+  show-line: true
+  encode-level: 'LowercaseColorLevelEncoder'
+  stacktrace-key: 'stacktrace'
+  log-in-console: true
+
+# redis configuration
+redis:
+  db: 0
+  addr: '177.7.0.14:6379'
+  password: ''
+
+# email configuration
+email:
+  to: 'xxx@qq.com'
+  port: 465
+  from: 'xxx@163.com'
+  host: 'smtp.163.com'
+  is-ssl: true
+  secret: 'xxx'
+  nickname: 'test'
+
+# casbin configuration
+casbin:
+  model-path: './resource/rbac_model.conf'
+
+# system configuration
+system:
+  env: 'public'  # Change to "develop" to skip authentication for development mode
+  addr: 8888
+  db-type: 'mysql'
+  oss-type: 'local'
+  use-multipoint: false
+
+# captcha configuration
+captcha:
+  key-long: 6
+  img-width: 240
+  img-height: 80
+
+# mysql connect configuration
+mysql:
+  path: ''
+  config: ''
+  db-name: ''
+  username: ''
+  password: ''
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: ""
+  log-zap: false
+
+# local configuration
+local:
+  path: 'uploads/file'
+
+# qiniu configuration (请自行七牛申请对应的 公钥 私钥 bucket 和 域名地址)
+qiniu:
+  zone: 'ZoneHuaDong'
+  bucket: ''
+  img-path: ''
+  use-https: false
+  access-key: ''
+  secret-key: ''
+  use-cdn-domains: false
+
+
+# aliyun oss configuration
+aliyun-oss:
+  endpoint: 'Endpoint'
+  access-key-id: 'AccessKeyId'
+  access-key-secret: 'AccessKeySecret'
+  bucket-name: 'BucketName'
+  bucket-url: 'BucketUrl'
+
+# tencent cos configuration
+tencent-cos:
+  bucket: ''
+  region: 'ap-shanghai'
+  secret-id: ''
+  secret-key: ''
+  base-url: ''
+  path-prefix: ''
+
+# excel configuration
+excel:
+  dir: './resource/excel/'
+
+
+# timer task db clear table
+Timer:
+  start: true
+  spec: "@daily"  # 定时任务详细配置参考 https://pkg.go.dev/github.com/robfig/cron/v3
+  detail: [
+    { tableName: "operations" , compareField: "created_at", interval: "2160h" },
+  ]
