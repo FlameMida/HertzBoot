@@ -6,5 +6,5 @@ import (
 
 type JwtBlacklist struct {
 	global.MODEL
-	Jwt string `gorm:"type:text;comment:jwt"`
+	Jwt string `gorm:"column:jwt;type:text;comment:jwt"`
 }
