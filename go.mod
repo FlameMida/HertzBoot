@@ -6,7 +6,7 @@ require (
 	github.com/FlameMida/accessLog v0.0.0-20220919022935-04d60632051f
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.5+incompatible
 	github.com/casbin/casbin/v2 v2.55.1
-	github.com/casbin/gorm-adapter/v3 v3.10.0
+	github.com/casbin/gorm-adapter/v3 v3.11.0
 	github.com/cloudwego/hertz v0.3.2
 	github.com/fsnotify/fsnotify v1.5.4
 	github.com/go-redis/redis/v8 v8.11.5
