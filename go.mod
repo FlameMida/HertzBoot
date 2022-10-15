@@ -26,7 +26,7 @@ require (
 	github.com/spf13/viper v1.13.0
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
 	github.com/swaggo/swag v1.8.6
-	github.com/tencentyun/cos-go-sdk-v5 v0.7.38
+	github.com/tencentyun/cos-go-sdk-v5 v0.7.39
 	go.uber.org/zap v1.23.0
 	golang.org/x/sync v0.0.0-20220907140024-f12130a52804
 	gorm.io/driver/mysql v1.4.1
