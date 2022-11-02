@@ -30,7 +30,7 @@ require (
 	go.uber.org/zap v1.23.0
 	golang.org/x/sync v0.0.0-20220907140024-f12130a52804
 	gorm.io/driver/mysql v1.4.3
-	gorm.io/gorm v1.24.0
+	gorm.io/gorm v1.24.1
 )
 
 require (
