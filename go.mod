@@ -29,7 +29,7 @@ require (
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.39
 	go.uber.org/zap v1.23.0
 	golang.org/x/sync v0.1.0
-	gorm.io/driver/mysql v1.4.3
+	gorm.io/driver/mysql v1.4.4
 	gorm.io/gorm v1.24.1
 )
 
