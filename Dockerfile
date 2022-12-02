@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-WORKDIR /go/src/gin_starter
+WORKDIR /go/src/hertz
 COPY . .
 
 RUN go env -w GO111MODULE=on
@@ -12,9 +12,9 @@ RUN go build -o server .
 
 FROM alpine:latest
 
-WORKDIR /go/src/gin-starter
+WORKDIR /go/src/hertz
 
-COPY --from=0 /go/src/gin_starter ./
+COPY --from=0 /go/src/hertz ./
 
 EXPOSE 8888
 

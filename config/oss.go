@@ -14,7 +14,7 @@ type Qiniu struct {
 	UseCdnDomains bool   `mapstructure:"use-cdn-domains" json:"useCdnDomains" yaml:"use-cdn-domains"` // 上传是否使用CDN上传加速
 }
 
-type AliyunOSS struct {
+type AliOSS struct {
 	Endpoint        string `mapstructure:"endpoint" json:"endpoint" yaml:"endpoint"`
 	AccessKeyId     string `mapstructure:"access-key-id" json:"accessKeyId" yaml:"access-key-id"`
 	AccessKeySecret string `mapstructure:"access-key-secret" json:"accessKeySecret" yaml:"access-key-secret"`

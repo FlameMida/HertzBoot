@@ -15,6 +15,6 @@ type Server struct {
 	// oss
 	Local      Local      `mapstructure:"local" json:"local" yaml:"local"`
 	Qiniu      Qiniu      `mapstructure:"qiniu" json:"qiniu" yaml:"qiniu"`
-	AliyunOSS  AliyunOSS  `mapstructure:"aliyun-oss" json:"aliyunOSS" yaml:"aliyun-oss"`
+	AliOSS     AliOSS     `mapstructure:"ali-oss" json:"aliOSS" yaml:"ali-oss"`
 	TencentCOS TencentCOS `mapstructure:"tencent-cos" json:"tencentCOS" yaml:"tencent-cos"`
 }

@@ -1,5 +1,5 @@
 definitions:
-  config.AliyunOSS:
+  config.AliOSS:
     properties:
       accessKeyId:
         type: string
@@ -162,7 +162,7 @@ definitions:
     type: object
   config.Server:
     properties:
-      aliyunOSS:
+      aliOSS:
         $ref: '#/definitions/config.AliyunOSS'
       captcha:
         $ref: '#/definitions/config.Captcha'

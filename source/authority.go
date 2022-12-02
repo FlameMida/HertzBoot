@@ -1,8 +1,8 @@
 package source
 
 import (
-	"HertzBoot/app/global"
-	"HertzBoot/modules/admin/entities"
+	"HertzBoot/internal/admin/entities"
+	"HertzBoot/pkg/global"
 	"github.com/gookit/color"
 	"time"
 

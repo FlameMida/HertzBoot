@@ -1,7 +1,7 @@
 package source
 
 import (
-	"HertzBoot/app/global"
+	"HertzBoot/pkg/global"
 
 	gormAdapter "github.com/casbin/gorm-adapter/v3"
 	"github.com/gookit/color"

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"HertzBoot/app/global"
-	"HertzBoot/app/provider"
+	Initialize "HertzBoot/init"
+	"HertzBoot/pkg/global"
 	"database/sql"
 )
 
@@ -19,18 +19,18 @@ import (
 // @name                       Authorization
 // @BasePath                   /
 func main() {
-	global.VP = provider.Viper() // 初始化Viper
-	global.LOG = provider.Zap()  // 初始化zap日志库
-	global.DB = provider.Gorm()  // gorm连接数据库
-	provider.Redis()
-	provider.Timer()
+	global.VP = Initialize.Viper() // 初始化Viper
+	Initialize.Zap()               // 初始化zap日志库
+	global.DB = Initialize.Gorm()  // gorm连接数据库
+	Initialize.Redis()
+	Initialize.Timer()
 	if global.DB != nil {
-		provider.MysqlTables(global.DB) // 初始化表
+		Initialize.MysqlTables(global.DB) // 初始化表
 		// 程序结束前关闭数据库链接
 		db, _ := global.DB.DB()
 		defer func(db *sql.DB) {
 			_ = db.Close()
 		}(db)
 	}
-	provider.RunServer()
+	Initialize.RunServer()
 }

@@ -1,5 +1,3 @@
-# gin-starter Global Configuration
-
 # jwt configuration
 jwt:
   signing-key: 'Keys'
@@ -10,7 +8,7 @@ jwt:
 zap:
   level: 'info'
   format: 'console'
-  prefix: '[GIN-STARTER]'
+  prefix: '[HERTZ-BOOT]'
   director: 'log'
   link-name: 'latest_log'
   show-line: true
@@ -28,8 +26,8 @@ redis:
 email:
   to: 'xxx@qq.com'
   port: 465
-  from: 'xxx@163.com'
-  host: 'smtp.163.com'
+  from: 'xxx@qq.com'
+  host: 'smtp.qq.com'
   is-ssl: true
   secret: 'xxx'
   nickname: 'test'
@@ -79,8 +77,8 @@ qiniu:
   use-cdn-domains: false
 
 
-# aliyun oss configuration
-aliyun-oss:
+# ali oss configuration
+ali-oss:
   endpoint: 'Endpoint'
   access-key-id: 'AccessKeyId'
   access-key-secret: 'AccessKeySecret'
@@ -99,12 +97,3 @@ tencent-cos:
 # excel configuration
 excel:
   dir: './resource/excel/'
-
-
-# timer task db clear table
-Timer:
-  start: true
-  spec: "@daily"  # 定时任务详细配置参考 https://pkg.go.dev/github.com/robfig/cron/v3
-  detail: [
-    { tableName: "operations" , compareField: "created_at", interval: "2160h" },
-  ]

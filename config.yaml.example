@@ -1,4 +1,4 @@
-aliyun-oss:
+ali-oss:
   endpoint: Endpoint
   access-key-id: AccessKeyId
   access-key-secret: AccessKeySecret
@@ -63,13 +63,6 @@ tencent-cos:
   secret-key: ""
   base-url: ""
   path-prefix: ""
-timer:
-  start: true
-  spec: '@daily'
-  detail:
-  - tableName: sys_operation_records
-    compareField: created_at
-    interval: 2160h
 zap:
   level: info
   format: console
