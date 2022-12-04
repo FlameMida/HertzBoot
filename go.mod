@@ -29,7 +29,7 @@ require (
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
 	github.com/swaggo/swag v1.8.7
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.40
-	go.uber.org/zap v1.23.0
+	go.uber.org/zap v1.24.0
 	golang.org/x/sync v0.1.0
 	gorm.io/driver/mysql v1.4.4
 	gorm.io/gorm v1.24.2
