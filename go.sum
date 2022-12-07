@@ -85,8 +85,8 @@ github.com/clbanning/mxj v1.8.4/go.mod h1:BVjHeAH+rl9rs6f+QIpeRl0tfu10SXn1pUSa5P
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cloudwego/hertz v0.0.1/go.mod h1:prTyExvsH/UmDkvfU3dp3EHsZFQISfT8R7BirvpTKdo=
 github.com/cloudwego/hertz v0.3.2/go.mod h1:hnv3B7eZ6kMv7CKFHT2OC4LU0mA4s5XPyu/SbixLcrU=
-github.com/cloudwego/hertz v0.4.1 h1:EcL7v+MGeCt+qsLC1JGvlkPTm3kHmwNQg43FcrMyd+s=
-github.com/cloudwego/hertz v0.4.1/go.mod h1:K1U0RlU07CDeBINfHNbafH/3j9uSgIW8otbjUys3OPY=
+github.com/cloudwego/hertz v0.4.2 h1:Ntfs5MdPoKeFSbyStU2drM4CizOkEfYWsB9s1Q3taPY=
+github.com/cloudwego/hertz v0.4.2/go.mod h1:K1U0RlU07CDeBINfHNbafH/3j9uSgIW8otbjUys3OPY=
 github.com/cloudwego/netpoll v0.2.4/go.mod h1:1T2WVuQ+MQw6h6DpE45MohSvDTKdy2DlzCx2KsnPI4E=
 github.com/cloudwego/netpoll v0.2.6/go.mod h1:1T2WVuQ+MQw6h6DpE45MohSvDTKdy2DlzCx2KsnPI4E=
 github.com/cloudwego/netpoll v0.3.1 h1:xByoORmCLIyKZ8gS+da06WDo3j+jvmhaqS2KeKejtBk=
