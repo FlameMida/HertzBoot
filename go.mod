@@ -27,7 +27,7 @@ require (
 	github.com/songzhibin97/gkit v1.2.7
 	github.com/spf13/viper v1.14.0
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
-	github.com/swaggo/swag v1.8.7
+	github.com/swaggo/swag v1.8.9
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.40
 	go.uber.org/zap v1.24.0
 	golang.org/x/sync v0.1.0
