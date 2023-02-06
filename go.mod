@@ -24,7 +24,7 @@ require (
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/satori/go.uuid v1.2.0
 	github.com/shirou/gopsutil/v3 v3.22.11
-	github.com/songzhibin97/gkit v1.2.7
+	github.com/songzhibin97/gkit v1.2.8
 	github.com/spf13/viper v1.14.0
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a
 	github.com/swaggo/swag v1.8.10
