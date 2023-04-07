@@ -1,8 +1,8 @@
 package requests
 
 import (
+	uuid "github.com/gofrs/uuid/v5"
 	"github.com/golang-jwt/jwt/v4"
-	uuid "github.com/satori/go.uuid"
 )
 
 // CustomClaims Custom claims structure

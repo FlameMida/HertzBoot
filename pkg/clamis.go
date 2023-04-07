@@ -5,7 +5,7 @@ import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/gofrs/uuid/v5"
 )
 
 // GetUserID 从Hertz的Context中获取从jwt解析出来的用户ID

@@ -6,7 +6,7 @@ import (
 	"HertzBoot/pkg/global"
 	"HertzBoot/pkg/request"
 	"errors"
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/gofrs/uuid/v5"
 	"gorm.io/gorm"
 )
 
@@ -25,7 +25,7 @@ func (adminService *AdminService) Register(u entities.Admin) (err error, userInt
 	}
 	// 否则 附加uuid 密码md5简单加密 注册
 	u.Password = pkg.MD5V([]byte(u.Password))
-	u.UUID = uuid.NewV4()
+	u.UUID, _ = uuid.NewV4()
 	err = global.DB.Create(&u).Error
 	return err, u
 }

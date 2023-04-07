@@ -2,7 +2,7 @@ package entities
 
 import (
 	"HertzBoot/pkg/global"
-	"github.com/satori/go.uuid"
+	"github.com/gofrs/uuid/v5"
 )
 
 type Admin struct {

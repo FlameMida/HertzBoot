@@ -6,7 +6,7 @@ import (
 	"github.com/gookit/color"
 	"time"
 
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/gofrs/uuid/v5"
 	"gorm.io/gorm"
 )
 
@@ -14,8 +14,13 @@ var Admin = new(admin)
 
 type admin struct{}
 
+func genUUID() uuid.UUID {
+	v4, _ := uuid.NewV4()
+	return v4
+}
+
 var admins = []entities.Admin{
-	{MODEL: global.MODEL{ID: 1, CreatedAt: time.Now(), UpdatedAt: time.Now()}, UUID: uuid.NewV4(), Username: "admin", Password: "e10adc3949ba59abbe56e057f20f883e", NickName: "超级管理员", Avatar: "", AuthorityId: "888"},
+	{MODEL: global.MODEL{ID: 1, CreatedAt: time.Now(), UpdatedAt: time.Now()}, UUID: genUUID(), Username: "admin", Password: "e10adc3949ba59abbe56e057f20f883e", NickName: "超级管理员", Avatar: "", AuthorityId: "888"},
 }
 
 // Init
