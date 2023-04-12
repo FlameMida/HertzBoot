@@ -15,7 +15,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/gookit/color v1.5.3
 	github.com/hertz-contrib/cors v0.0.0-20230307061136-1fe747ea6a2a
-	github.com/hertz-contrib/logger/zap v0.0.0-20230320032231-b153fe729ee7
+	github.com/hertz-contrib/logger/zap v1.0.0
 	github.com/hertz-contrib/swagger v0.0.0-20220711030440-b6402d4709f0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
