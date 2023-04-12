@@ -9,8 +9,7 @@ import (
 
 // Cors 处理跨域请求,支持options访问
 func Cors() app.HandlerFunc {
-	return func(c context.Context, ctx *app.RequestContext) {
-		cors.New(cors.Config{
+	return cors.New(cors.Config{
 			AllowOrigins: []string{"*"},
 			AllowMethods: []string{
 				"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD",
@@ -28,6 +27,5 @@ func Cors() app.HandlerFunc {
 			},
 			AllowCredentials: true,
 			MaxAge:           12 * time.Hour,
-		})
-	}
+		})	
 }
