@@ -24,7 +24,7 @@ require (
 	github.com/qiniu/go-sdk/v7 v7.14.0
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/shirou/gopsutil/v3 v3.23.3
-	github.com/songzhibin97/gkit v1.2.9
+	github.com/songzhibin97/gkit v1.2.10
 	github.com/spf13/viper v1.15.0
 	github.com/swaggo/files v1.0.1
 	github.com/swaggo/swag v1.8.12
