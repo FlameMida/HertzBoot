@@ -69,8 +69,8 @@ github.com/bytedance/sonic v1.3.5/go.mod h1:V973WhNhGmvHxW6nQmsHEfHaoU9F3zTF+93r
 github.com/bytedance/sonic v1.5.0/go.mod h1:ED5hyg4y6t3/9Ku1R6dU/4KyJ48DZ4jPhfY1O2AihPM=
 github.com/bytedance/sonic v1.8.1 h1:NqAHCaGaTzro0xMmnTCLUyRlbEP6r8MCA1cJUrH3Pu4=
 github.com/bytedance/sonic v1.8.1/go.mod h1:i736AoUSYt75HyZLoJW9ERYxcy6eaN6h4BZXU064P/U=
-github.com/casbin/casbin/v2 v2.66.3 h1:m0/mO4Xpu4YzTMqm0U1bm9JqEMSdIx6IRmnMCORnVDs=
-github.com/casbin/casbin/v2 v2.66.3/go.mod h1:vByNa/Fchek0KZUgG5wEsl7iFsiviAYKRtgrQfcJqHg=
+github.com/casbin/casbin/v2 v2.67.0 h1:+cOjW1hZJG18IsXXQJf2wK597SBo2XQJBVUeDYNt8u4=
+github.com/casbin/casbin/v2 v2.67.0/go.mod h1:vByNa/Fchek0KZUgG5wEsl7iFsiviAYKRtgrQfcJqHg=
 github.com/casbin/gorm-adapter/v3 v3.15.1 h1:Q6VatnOhxL7DvV6MYMbCBnUKVVz2h36vj6c/V9i+23w=
 github.com/casbin/gorm-adapter/v3 v3.15.1/go.mod h1:fKGFbHqk2yCpUlJJB3eptNTEX3kHzJDD582npc4wNp0=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
