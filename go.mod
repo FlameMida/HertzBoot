@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/FlameMida/accessLog v0.0.0-20220919022935-04d60632051f
 	github.com/aliyun/aliyun-oss-go-sdk v2.2.7+incompatible
-	github.com/casbin/casbin/v2 v2.66.3
+	github.com/casbin/casbin/v2 v2.72.1
 	github.com/casbin/gorm-adapter/v3 v3.15.1
 	github.com/cloudwego/hertz v0.6.2
 	github.com/fsnotify/fsnotify v1.6.0
@@ -97,7 +97,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
-	github.com/tidwall/gjson v1.13.0 // indirect
+	github.com/tidwall/gjson v1.14.4 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.11 // indirect
