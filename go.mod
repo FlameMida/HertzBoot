@@ -1,4 +1,4 @@
-module AXSChool
+module HertzBoot
 
 go 1.24
 
