@@ -5,7 +5,7 @@ go 1.24
 require (
 	github.com/FlameMida/accessLog v0.0.0-20220919022935-04d60632051f
 	github.com/aliyun/aliyun-oss-go-sdk v3.0.2+incompatible
-	github.com/casbin/casbin/v2 v2.108.0
+	github.com/casbin/casbin/v2 v2.128.0
 	github.com/casbin/gorm-adapter/v3 v3.33.0
 	github.com/cloudwego/hertz v0.10.1
 	github.com/fsnotify/fsnotify v1.9.0
