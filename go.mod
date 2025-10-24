@@ -12,7 +12,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.4
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/gofrs/uuid/v5 v5.3.2
-	github.com/golang-jwt/jwt/v4 v4.2.0
+	github.com/golang-jwt/jwt/v4 v4.5.2
 	github.com/gookit/color v1.5.4
 	github.com/hertz-contrib/cors v0.1.0
 	github.com/hertz-contrib/logger/zap v1.1.0
